@@ -1,0 +1,732 @@
+# **MATH**
+
+## Vector3
+
+> Vector3(number, number, number)
+
+```lua
+local vec = Vector3(0, 0, 0)
+vec:print()
+```
+
+> v1:__tostring()
+
+```lua
+local a = player.position
+print(a:__tostring())
+```
+
+## Vector2
+
+# **LIBRARIES**
+
+## game
+
+## camera
+
+## network
+
+## ts
+
+## healthPrediction
+
+## system
+
+## chat
+
+## keyboard
+
+## damage
+
+## orb
+
+## evade
+
+## renderer
+
+## networking
+
+# **OBJECTS**
+
+## gameObject.obj
+
+- ```Vector3``` gameObject.position
+- ```Vector3``` gameObject.pos
+- ```number```  gameObject.id
+- ```number```  gameObject.team
+- ```number```  gameObject.networkId
+- ```number```  gameObject.boundingRadius
+- ```string```  gameObject.name
+- ```number```  gameObject.resource
+- ```number```  gameObject.maxResource
+- ```number```  gameObject.mana
+- ```number```  gameObject.maxMana
+- ```number```  gameObject.secondaryResource
+- ```number```  gameObject.maxSecondaryResource
+- ```number```  gameObject.sar
+- ```number```  gameObject.maxSar
+- ```boolean``` gameObject.isTargetable
+- ```number```  gameObject.health
+- ```number```  gameObject.maxHealth
+- ```number```  gameObject.healthPercent
+- ```number```  gameObject.manaPercent
+- ```number```  gameObject.allShield
+- ```number```  gameObject.physicalShield
+- ```number```  gameObject.magicalShield
+- ```boolean``` gameObject.isEnemy
+- ```boolean``` gameObject.isAlly
+- ```boolean``` gameObject.isNeutral
+- ```boolean``` gameObject.isHero
+- ```boolean``` gameObject.isMonster
+- ```boolean``` gameObject.isMinion
+- ```boolean``` gameObject.isInhib
+- ```boolean``` gameObject.isNexus
+- ```boolean``` gameObject.isTurret
+- ```boolean``` gameObject.isMissile
+- ```boolean``` gameObject.isMelee
+- ```boolean``` gameObject.isRanged
+- ```boolean``` gameObject.isStructure
+- ```boolean``` gameObject.isLaneMinion
+- ```boolean``` gameObject.isSiegeMinion
+- ```boolean``` gameObject.isPet
+- ```boolean``` gameObject.isWard
+- ```boolean``` gameObject.isPlant
+- ```boolean``` gameObject.isLargeMonster
+- ```boolean``` gameObject.isEpicMonster
+- ```boolean``` gameObject.isBlueRed
+- ```boolean``` gameObject.isDead
+- ```boolean``` gameObject.isVisible
+- ```number```  gameObject.attackRange
+- ```number```  gameObject.totalBonusAttackDamage
+- ```number```  gameObject.totalAbilityPower
+- ```number```  gameObject.totalAttackDamage
+- ```number```  gameObject.totalBonusAbilityPower
+- ```number```  gameObject.flatMagicDamageMod
+- ```number```  gameObject.hash
+- ```boolean``` gameObject.isAsleep
+- ```boolean``` gameObject.isInvulnerable
+- ```number```  gameObject.magicResist
+- ```number```  gameObject.attackSpeedMod
+- ```number```  gameObject.armor
+- ```number```  gameObject.flatMagicPenetration
+- ```number```  gameObject.percentMagicPenetration
+- ```number```  gameObject.physicalLethality
+- ```number```  gameObject.flatArmorPenetration
+- ```number```  gameObject.percentArmorPenetration
+- ```number```  gameObject.healthRegen
+- ```number```  gameObject.percentLifeStealMod
+- ```number```  gameObject.gold
+- ```number```  gameObject.totalGold
+- ```number```  gameObject.shutdownValue
+- ```number```  gameObject.percentCooldownMod
+- ```boolean``` gameObject.isOnScreen
+- ```Vector3``` gameObject.direction
+- ```string```  gameObject.charName
+- ```string```  gameObject.skinName
+- ```number```  gameObject.level
+- ```number```  gameObject.buffCount
+- ```boolean``` gameObject.isMe
+- ```number```  gameObject.attackCastDelay
+- ```number```  gameObject.attackDelay
+- ```boolean``` gameObject.isMoving
+- ```boolean``` gameObject.isCastingSpell
+- ```boolean``` gameObject.canAttack
+- ```number```  gameObject.totalHealth
+- ```number```  gameObject.totalMaxHealth
+- ```number```  gameObject.moveSpeed
+- ```Vector2``` gameObject.barPos
+- ```table```   gameObject.getWayPoints
+- ```table```   gameObject.path
+- ```number```  gameObject.pathCount
+- ```number```  gameObject.pathIndex
+- ```number```  gameObject.distance
+- ```boolean``` gameObject.isDashing
+- ```number```  gameObject.dashSpeed
+- ```number```  gameObject.crit
+- ```boolean``` gameObject.isRecalling
+- ```boolean``` gameObject.isTeleporting
+- ```boolean``` gameObject.willReviveOnDeath
+- ```gameObject.obj``` gameObject.owner
+- ```boolean``` gameObject.canMove
+- ```Vector3``` gameObject.pathEndposition
+- ```Vector3``` gameObject.nextPathposition
+- ```heroStats.obj``` gameObject.stats
+- ```number``` gameObject.actionState
+- ```spellCastInfo.obj``` gameobject.activeSpell
+- ```spellCastInfo.obj``` gameobject.basicAttack
+
+**localplayer only function**  
+
+> player:castSpell(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```bool``` success  
+
+```lua
+-- example: Garen Q
+player:castSpell(SpellSlot.Q)
+```
+
+> player:castSpell(slot, pos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` pos  
+**Return Value**  
+```bool``` success  
+
+```lua
+-- example: Ezreal Q
+player:castSpell(SpellSlot.Q, game.mousePos)
+```
+
+> player:castSpell(slot, obj)
+
+**Parameters**  
+```number``` slot  
+```gameObject.obj``` obj  
+**Return Value**  
+```bool``` success  
+
+```lua
+-- example: Vayne E
+player:castSpell(SpellSlot.E, orb.selectedTarget)
+```
+
+> player:castSpell(slot, startPos, endPos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` startPos  
+```Vector3``` endPos  
+**Return Value**  
+```bool``` success  
+
+```lua
+-- example: Viktor E
+player:castSpell(SpellSlot.E, player.position, game.mousePos)
+```
+
+> player:castSpellFast(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```bool``` success  
+
+```
+castSpellFast variants are the same as castSpell but ignore rate limiting
+```
+
+> player:castSpellFast(slot, pos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` pos  
+**Return Value**  
+```bool``` success  
+
+> player:castSpellFast(slot, obj)
+
+**Parameters**  
+```number``` slot  
+```gameObject.obj``` obj  
+**Return Value**  
+```bool``` success  
+
+> player:castSpell(slot, startPos, endPos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` startPos  
+```Vector3``` endPos  
+**Return Value**  
+```bool``` success  
+
+> player:levelSpell(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```void```  
+
+> player:move(pos)
+
+**Parameters**  
+```Vector3``` pos  
+**Return Value**  
+```void```  
+
+> player:attack(obj)
+
+**Parameters**  
+```gameObject.obj``` obj  
+**Return Value**  
+```void``` 
+
+> player:issueOrder(order, obj)
+
+**Parameters**  
+```number``` order  
+```gameObject.obj``` obj  
+**Return Value**  
+```void``` 
+
+> player:issueOrder(order, pos)
+
+**Parameters**  
+```number``` order  
+```Vector3``` pos  
+**Return Value**  
+```void``` 
+
+> player:issueOrder(order, pos, drawClick, triggerEvent)
+
+**Parameters**  
+```number``` order  
+```gameObject.obj``` obj  
+```boolean``` drawClick  
+```boolean``` triggerEvent  
+**Return Value**  
+```void``` 
+
+```lua
+--if drawclick is true the indicator will be drawn
+--if triggerEvent is false the order wont trigger the OnIssueOrder Event
+player:issueOrder(gameObjectOrder.moveTo, game.mousePos, true, false) 
+-- ^ draw indicator, dont trigger event
+```
+
+> player:issueOrderFast(obj)
+
+```
+same as issueOrder but ignores ratelimit and implicitly generates order
+```
+
+**Parameters**  
+```gameObject.obj``` obj  
+**Return Value**  
+```void``` 
+
+> player:issueOrderFast(pos)
+
+**Parameters**  
+```Vector3``` pos  
+**Return Value**  
+```void``` 
+
+> player:issueOrderFast(order, pos, drawClick, triggerEvent)
+
+**Parameters**  
+```number``` order  
+```gameObject.obj``` obj  
+```boolean``` drawClick  
+```boolean``` triggerEvent  
+**Return Value**  
+```void``` 
+
+> player:updateChargeableSpell(slot, pos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` pos  
+**Return Value**  
+```void```  
+
+```lua
+--example: Xerath Q
+player:updateChargeableSpell(SpellSlot.Q, game.mousePos)
+```
+
+> player:updateChargeableSpellFast(slot, pos)
+
+**Parameters**  
+```number``` slot  
+```Vector3``` pos  
+**Return Value**  
+```void```  
+
+> player:setSkin(skinID)
+
+**Parameters**  
+```number``` skinID  
+**Return Value**  
+```void```  
+
+```lua
+-- example: Ezreal Q
+player:castSpell(SpellSlot.Q, game.mousePos)
+```
+
+**all gameobject functions**  
+
+> gameObject:hasBuffOfType(type)
+
+**Parameters**  
+```number``` type  
+**Return Value**  
+```bool```  hasBuff
+
+```lua
+if player:hasBuffOfType(5) then
+    print("player is stunned")
+end
+```
+
+> gameObject:getBuffByIndex(index)
+
+**Parameters**  
+```number``` index  
+**Return Value**  
+```buffInstance.obj```  
+
+```lua
+for i = 0,player.buffCount - 1 do
+    local buff = player:getBuffByIndex(i)
+    if buff and buff.valid then
+        print(buff.name)
+    end
+end
+```
+
+> gameObject:findBuff(name)
+
+**Parameters**  
+```string``` name  
+**Return Value**  
+```buffInstance.obj```  
+
+> gameObject:findBuff(hash)
+
+**Parameters**  
+```number``` hash  
+**Return Value**  
+```buffInstance.obj```  
+
+> gameObject:spellState(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```number``` SpellState  
+
+> gameObject:isValidTarget(range, onlyEnemy, from)
+
+**Parameters**  
+```number``` range  
+```boolean``` onlyEnemy  
+```Vector3``` from  
+**Return Value**  
+```boolean```  
+
+> gameObject:getSpell(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```spellDataInst.obj``` spell  
+
+# **CALLBACKS**
+
+> cb.add(number, function)
+
+reigsters a callback
+
+```lua
+function OnDraw()
+    -- do something
+end
+
+cb.add(cb.draw, OnDraw)
+```
+
+> cb.remove(number, function)
+
+unregisters a callback, call this in the **unload** callback
+
+```lua
+cb.remove(cb.draw, OnDraw)
+```
+
+> cb.delay_action(function, number)
+
+used to delay a function call by the specified number in milliseconds
+
+```lua
+function PrintTime()
+    print(game.time)
+end
+
+cb.delay(PrintTime, 1000)
+```
+
+## draw
+
+no args, used for rendering only
+
+```lua
+function OnDraw()
+    renderer.draw_circle(player.position, 50, 2, Color(255, 0, 0, 255))
+end
+
+cb.add(cb.draw, OnDraw)
+```
+
+## update
+
+no args, called per game frame
+
+## tick
+
+no args, called every 25 game frames
+
+## wndproc
+
+Has two args: message, wParam
+
+```lua
+function OnWndProc(msg, wParam)
+    if msg == 0x100 then -- WM_KEYDOWN
+        if wParam == 0x20 then -- VK_SPACE
+            print("spacebar down")
+        end
+    end
+end
+
+cb.add(cb.wndproc, OnWndProc)
+```
+
+## process_spell
+
+Has two args: gameObject.obj, spellCastInfo.obj
+
+```lua
+function OnProcessSpell(sender, spell)
+    print(sender.skinName .. " cast " .. spell.spellData.name)
+end
+
+cb.add(cb.process_spell, OnProcessSpell)
+```
+
+## stop_cast
+
+Has one arg, gameObject.obj
+
+```lua
+function OnStopCast(sender)
+    print(sender.skinName .. " has cancelled a cast")
+end
+
+cb.add(cb.stop_cast, OnStopCast)
+```
+
+## delete
+
+Has two args: gameObject.obj, number
+
+```lua
+function OnDelete(sender, netID)
+    print(sender.name .. " is being deleted")
+end
+
+cb.add(cb.delete, OnDelete)
+```
+
+## create_object
+
+Has two args: gameObject.obj, number
+
+```lua
+function OnCreateObject(sender, netID)
+    print(sender.name .. " has been created")
+end
+
+cb.add(cb.create_object, OnCreateObject)
+```
+
+## create_missile
+
+Has two args: missileClient.obj, number
+
+```lua
+function OnCreateMissile(sender, netID)
+    print(sender.name .. " has been created")
+end
+
+cb.add(cb.create_missile, OnCreateMissile)
+```
+
+## new_path
+
+Has four args: gameObject.obj, table, boolean, number
+
+```lua
+    function OnNewPath(sender, path, isDash, dashSpeed)
+        if isDash then
+            print(sender.skinName .. " is dashing")
+        else
+            print(sender.skinName .. " is moving")
+        end
+    end
+
+    cb.add(cb.new_path, OnNewPath)
+```
+
+## pre_attack
+
+Has one arg, gameobject.obj
+
+```lua
+function OnPreAttack(target)
+    print("orb is going to attack " .. target.skinName)
+    return true
+end
+
+cb.add(cb.pre_attack, function(target) return OnPreAttack(target) end)
+```
+
+## post_attack
+
+Has one arg, gameobject.obj
+
+```lua
+function OnPostAttack(target)
+    print("orb completed attack on " .. target.skinName)
+end
+
+cb.add(cb.post_attack, OnPostAttack)
+```
+
+## unload
+
+Has no args, triggered on plugin unload, remove your callbacks and menu here
+
+```lua
+function OnUnload()
+    mainMenu.remove("rootMenuKey")
+
+    cb.remove(cb.draw, OnDraw)
+end
+
+cb.add(cb.unload, OnUnload)
+
+```
+
+## execute_cast_frame
+
+Has two args: gameObject.obj, spellCastInfo.obj
+
+```lua
+function OnProcessSpell(sender, spell)
+    print(sender.skinName .. " finished casting " .. spell.spellData.name)
+end
+
+cb.add(cb.process_spell, OnProcessSpell)
+```
+
+## issue_order
+
+Has three args: number, Vector3, gameObject.obj
+
+```lua
+function OnIssueOrder(order, pos, obj)
+    if order == gameObjectOrder.moveTo then
+        game.blockOrder()
+        print("blocking movement")
+    end
+end
+
+cb.add(cb.issue_order, OnIssueOrder)
+```
+
+## delete_missile
+
+Has two args: missileClient.obj, number
+
+```lua
+function OnDeleteMissile(sender, netID)
+    print(sender.name .. " is being deleted")
+end
+
+cb.add(cb.delete_missile, OnDelete)
+```
+
+## teleport
+
+Has two args: gameObject.obj, number
+
+```lua
+function OnTeleport(sender, type)
+    if type == teleportType.Recall then
+        print(sender.skinName .. " started recalling")
+    end
+end
+
+cb.add(cb.teleport, OnTeleport)
+```
+
+## vision_change
+
+Has two args: gameObject.obj, boolean
+
+```lua
+function OnVisionChange(sender, isVisible)
+    if isVisible then
+        print(sender.skinName .. " becaome visible")
+    end
+end
+
+cb.add(cb.vision_change, OnVisionChange)
+```
+
+## gapcloser
+
+Has one arg, gapcloserData.obj
+
+```lua
+function OnGapCloser(args)
+    print(args.sender.skinName .. " used gapcloser with slot " .. args.slot)
+end
+
+cb.add(cb.gapcloser, OnGapCloser)
+```
+
+## play_animation
+
+Has two args: gameObject.obj, string
+
+```lua
+function OnPlayAnimation(sender, animationName)
+    print(sender.skinName .. " is playing animation " .. animationName)
+end
+
+cb.add(cb.play_animation, OnPlayAnimation)
+```
+
+## unkillable_minion
+
+Has one arg, gameObject.obj
+
+```lua
+function OnUnkillableMinion(minion)
+    print("Orb cant lasthit " .. minion.skinName)
+end
+
+cb.add(cb.unkillable_minion, OnUnkillableMinion)
+```
+
+## change_inventory
+
+## game_end
+
+Has no args
+
+```lua
+function OnGameEnd()
+    print("the game has ended")
+end
+
+cb.add(cb.game_end, OnGameEnd)
+```
