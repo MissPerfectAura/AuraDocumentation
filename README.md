@@ -161,6 +161,18 @@ Return Value
 
 ## chat
 
+> chat.printChat(msg)
+
+Parameter  
+```string``` msg  
+sends message locally  
+
+> chat.sendChat(msg)
+
+Parameter  
+```string``` msg  
+sends message in chat  
+
 ## keyboard
 
 ## damage
