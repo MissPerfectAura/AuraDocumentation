@@ -668,6 +668,56 @@ Properties:
 - ```number``` buffInstance.stacks
 - ```string``` buffInstance.name
 
+## objManager.obj
+
+- ```table``` objManager.heroes
+- ```table``` objManager.turrets
+- ```table``` objManager.aibases
+- ```table``` objManager.minions
+- ```table``` objManager.objList
+
+> objManager.getObjectFromID(id)
+
+**PARAMETERS**  
+```number``` id  
+**RETURN VALUE**  
+```gameObject.obj``` object  
+
+> objManager.getHeroesInRange(range, position, enemy, ally)
+
+**PARAMETERS**  
+```number``` range
+```Vector3``` position  
+```boolean``` enemy    
+```boolean``` ally    
+**RETURN VALUE**  
+```table``` heroes  
+
+> objManager.getEnemyHeroes()
+
+**RETURN VALUE**  
+```table``` enemies  
+
+> objManager.getAllyHeroes()
+
+**RETURN VALUE**  
+```table``` allies  
+
+> objManager.getEnemiesInRange(range)
+
+**PARAMETERS**
+```number``` range  
+**RETURN VALUE**  
+```table``` enemies  
+
+> objManager.getEnemiesInRange(range, from)
+
+**PARAMETERS**
+```number``` range  
+```Vector3``` from  
+**RETURN VALUE**  
+```table``` enemies  
+
 # **ENUMS**
 
 - SpellSlot
