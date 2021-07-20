@@ -90,7 +90,7 @@ modifies vector
 ```Vector3```  extended vector
 
 ```
-returns new shortened vector
+returns new extended vector
 ```
 
 > v1:lerp(v2, delta)
