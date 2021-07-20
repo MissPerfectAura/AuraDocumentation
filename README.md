@@ -428,6 +428,94 @@ end
 **Return Value**  
 ```spellDataInst.obj``` spell  
 
+> gameObject:getAutoAttackRange(target)  
+
+**Parameters**  
+```gameobject.obj``` target  
+**Return Value**  
+```float```  
+
+```lua
+--adjusts range according to target, eg. cait debuff
+local a = player:getAutoAttackRange(orb.selectedTarget)
+
+--player bounding + player range
+local a = player:getAutoAttackRange(nil)
+```
+
+> gameObject:isInAutoAttackRange(target)  
+
+**Parameters**  
+```gameobject.obj``` target  
+**Return Value**  
+```bool```  
+
+> gameObject:drawDamage(damage, color)  
+
+**Parameters**  
+```number``` damage  
+```number``` color  
+**Return Value**  
+```void```  
+
+```lua
+--draw damage on healthbar
+player:drawDamage(200, Color(255,255,255,255))
+```
+
+> gameObject:findItemSlot(itemID)
+
+**Parameters**  
+```number``` itemID  
+**Return Value**  
+```number```  spellSlot  
+
+> gameObject:isFacing()
+
+**Return Value**
+```boolean```
+
+```lua
+if orb.selectedTarget:isFacing() then
+    print("target faces player")
+else
+    print("target does not face player")
+end
+```
+
+> gameObject:getAutoAttackDamage(target)  
+
+**Parameters**  
+```gameobject.obj``` target  
+**Return Value**  
+```float```  
+
+> gameObject:willReviveOnDeathByTime(time)  
+
+**Parameters**  
+```number``` time    
+**Return Value**  
+```bool```  
+
+```
+time in seconds
+```
+
+> gameObject:getItemIdFromSlot(slot)
+
+**Parameters**  
+```number``` slot  
+**Return Value**  
+```number```  itemID  
+
+> gameObject:createPath(position, smoothed)
+
+**Parameters**  
+```Vector3``` position  
+```bool``` smoothed  
+**Return Value**  
+```table```  path  
+
 # **CALLBACKS**
 
 > cb.add(number, function)
