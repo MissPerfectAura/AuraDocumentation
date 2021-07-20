@@ -129,7 +129,29 @@ print(a:__tostring())
 
 ## camera
 
+> camera.zoom
+
+Return Value  
+```number``` returns the current zoom value  
+
+> camera.setPosition(position)
+
+Parameters  
+```Vector3``` position to set camera to
+
+> camera.setZoom(value)
+
+Parameters  
+```number``` zoom value
+
 ## network
+
+> network.latency
+
+> network.ping
+
+Return Value  
+```number``` latency to the game server in milliseconds
 
 ## ts
 
@@ -150,6 +172,21 @@ print(a:__tostring())
 ## renderer
 
 ## networking
+
+> networking.downloadFile(url, path)
+
+Return Value  
+```boolean``` success
+
+> networking.post(url, body, header)
+
+Return Value
+```Response.obj```
+
+> networking.get(url)
+
+Return Value
+```Response.obj```
 
 # **OBJECTS**
 
