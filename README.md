@@ -670,6 +670,8 @@ Properties:
 
 ## objManager.obj
 
+Properties:  
+
 - ```table``` objManager.heroes
 - ```table``` objManager.turrets
 - ```table``` objManager.aibases
@@ -718,6 +720,46 @@ Properties:
 **RETURN VALUE**  
 ```table``` enemies  
 
+## SpellData.obj
+
+Properties:  
+
+- ```spellDataResource.obj``` SpellData.resource
+- ```string``` SpellData.name
+
+## SpellDataInst.obj
+
+Properties:  
+
+- ```number``` SpellDataInst.level
+- ```number``` SpellDataInst.ammo
+- ```number``` SpellDataInst.toggleState
+- ```SpellData.obj``` SpellDataInst.spellData
+- ```number``` SpellDataInst.cost
+- ```number``` SpellDataInst.targetingType
+
+## spellCastInfo.obj
+
+Properties:  
+
+- ```boolean``` spellCastInfo.isBasicAttack
+- ```number``` spellCastInfo.targetId
+- ```Vector3``` spellCastInfo.startPos
+- ```Vector3``` spellCastInfo.endPos
+- ```number``` spellCastInfo.slot
+- ```SpellData.obj``` spellCastInfo.spellData
+- ```number``` spellCastInfo.castDelay
+- ```gameObject.obj``` spellCastInfo.target
+- ```boolean``` spellCastInfo.hasTarget
+- ```number``` spellCastInfo.delay
+
+## spellDataResource.obj
+
+Properties:  
+
+- ```string``` spellDataResource.displayName
+- ```number``` spellDataResource.missileSpeed
+
 # **ENUMS**
 
 - SpellSlot
@@ -745,6 +787,38 @@ Properties:
   - Disabled
   - Cooldown
   - NoMana
+
+# **GLOBALS**
+
+- ```gameObject.obj``` player
+- ```gameObject.obj``` myHero
+- ```gameObject.obj``` LocalPlayer
+
+> Log(text)
+
+> log(text)
+
+> print(text)
+
+> Color(R, G, B, A)
+
+**PARAMETERS**
+```number``` R  
+```number``` G  
+```number``` B  
+```number``` A  
+**RETURN VALUE**
+```number```  hexColor  
+
+> color(R, G, B, A)
+
+**PARAMETERS**
+```number``` R  
+```number``` G  
+```number``` B  
+```number``` A  
+**RETURN VALUE**
+```number```  hexColor  
 
 # **CALLBACKS**
 
