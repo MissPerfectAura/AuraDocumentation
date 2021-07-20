@@ -2,6 +2,23 @@
 
 ## Vector3
 
+Properties:  
+
+- ```number``` x
+- ```number``` y
+- ```number``` z
+- ```number``` X
+- ```number``` Y
+- ```number``` Z
+- ```boolean``` isWall
+- ```boolean``` isBush
+- ```boolean``` isInFOW
+- ```boolean``` valid
+- ```number``` perpendicular
+- ```number``` perpendicular2
+- ```number``` height
+- ```Vector3``` normalized
+
 > Vector3(number, number, number)
 
 ```lua
@@ -16,7 +33,95 @@ local a = player.position
 print(a:__tostring())
 ```
 
+> v1:distance(v2)
+
+**Parameters**  
+```Vector3``` v2  
+**Return Value**  
+```number```  
+
+```lua
+local distance = player.position:distance(Vector3(0,0,0))
+print(distance)
+```
+
+> v1:shorten(v2, distance)
+
+**Parameters**  
+```Vector3``` v2  
+```number```  distance  
+**Return Value**  
+```void```  
+
+```
+modifies vector
+```
+
+> v1:shortended(v2, distance)
+
+**Parameters**  
+```Vector3``` v2  
+```number```  distance  
+**Return Value**  
+```Vector3```  shortened vector
+
+```
+returns new shortened vector
+```
+
+> v1:extend(v2, distance)
+
+**Parameters**  
+```Vector3``` v2  
+```number```  distance  
+**Return Value**  
+```void```  
+
+```
+modifies vector
+```
+
+> v1:extended(v2, distance)
+
+**Parameters**  
+```Vector3``` v2  
+```number```  distance  
+**Return Value**  
+```Vector3```  extended vector
+
+```
+returns new shortened vector
+```
+
+> v1:lerp(v2, delta)
+
+**Parameters**  
+```Vector3``` v2  
+```number```  delta  
+**Return Value**  
+```Vector3```  lerped vector
+
 ## Vector2
+
+Properties:  
+
+- ```number``` x
+- ```number``` y
+- ```number``` X
+- ```number``` Y
+
+> Vector2(number, number)
+
+```lua
+local a = Vector2(0, 0)
+```
+
+> v1:__tostring()
+
+```lua
+local a = Vector2(0, 0)
+print(a:__tostring())
+```
 
 # **LIBRARIES**
 
@@ -49,6 +154,8 @@ print(a:__tostring())
 # **OBJECTS**
 
 ## gameObject.obj
+
+Properties:  
 
 - ```Vector3``` gameObject.position
 - ```Vector3``` gameObject.pos
@@ -515,6 +622,79 @@ time in seconds
 ```bool``` smoothed  
 **Return Value**  
 ```table```  path  
+
+## HeroStats.obj
+
+Properties:  
+
+- ```number```  HeroStats.minionsKilled
+- ```number```  HeroStats.kills
+- ```number```  HeroStats.deaths
+- ```number```  HeroStats.assists
+
+## missileClient.obj
+
+Inherits gameObject.obj  
+  
+Properties:  
+
+- ```number``` missileClient.sourceIndex
+- ```Vector3``` missileClient.startPos
+- ```Vector3``` missileClient.endPos
+- ```number``` missileClient.targetIndex
+- ```string``` missileClient.missileName
+- ```SpellData.obj``` missileClient.sourceIndex
+- ```number``` missileClient.missileSpeed
+
+## buffScript.obj
+
+Properties:  
+
+- ```number``` buffScript.hash
+- ```string``` buffScript.name
+
+## buffInstance.obj
+
+Properties:  
+
+- ```number``` buffInstance.type
+- ```buffScript.obj``` buffInstance.script
+- ```number``` buffInstance.startTime
+- ```number``` buffInstance.endTime
+- ```number``` buffInstance.remainingTime
+- ```number``` buffInstance.counter
+- ```boolean``` buffInstance.valid
+- ```gameObject.obj``` buffInstance.source
+- ```number``` buffInstance.stacks
+- ```string``` buffInstance.name
+
+# **ENUMS**
+
+- SpellSlot
+  - Q
+  - W
+  - E
+  - R
+  - S1
+  - S2
+  - Item1
+  - Item2
+  - Item3
+  - Item4
+  - Item5
+  - Item6
+  - Trinket
+  - Recall
+  - Unknown
+
+- SpellState
+  - Ready
+  - NotAvailable
+  - NotLearned
+  - Supressed
+  - Disabled
+  - Cooldown
+  - NoMana
 
 # **CALLBACKS**
 
