@@ -406,6 +406,16 @@ Properties:
 **RETURN VALUE**  
 ```table``` enemies 
 
+## mainMenu
+
+> mainMenu.createMenu(name, key)
+
+> mainMenu.getMenu(key)
+
+> mainMenu.remove(key)
+
+> mainMenu.getVKey(char)
+
 # **OBJECTS**
 
 ## gameObject.obj
@@ -977,6 +987,48 @@ Properties:
 
 - ```Vector3``` mec.point
 - ```number``` mec.hitCount
+
+## menu.obj
+
+> menu:addCheckBox(displayName, key, defaultValue)
+
+> menu:addSliderInt(displayName, key, defaultValue, min, max)
+
+> menu:addSliderFloat(displayName, key, defaultValue, min, max)
+
+> menu:addList(displayName, key, defaultValue, elements, listSize)
+
+> menu:addKeybind(displayName, key, vKey, defaultValue, isToggle)
+
+> menu:addText(displayName, key)
+
+> menu:addSubMenu(displayName, key)
+
+> menu:getElement(key)
+
+> menu:getSubMenu(key)
+
+> menu:elementExists(key)
+
+## menuElement.obj
+
+Properties:
+
+- ```string``` getKey
+- ```string``` getDisplayName
+- ```boolean``` getBool
+- ```number``` getInt
+- ```number``` getFloat
+
+> menuElement:setDisplayName(name)
+
+> menuElement:setBool(value)
+
+> menuElement:setInt(value)
+
+> menuElement:setFloat(value)
+
+> menuElement:setTooltip(text)
 
 # **ENUMS**
 
