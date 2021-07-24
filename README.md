@@ -166,7 +166,7 @@ Return Value:
 
 Parameters:  
 ```number``` range  
-```Vector3``` from
+```Vector3``` from  
 Return Value:  
 ```gameObject.obj```  target
 
@@ -174,7 +174,7 @@ Return Value:
 
 Parameters:  
 ```number``` range  
-```number``` damageType
+```number``` damageType  
 Return Value:  
 ```gameObject.obj```  target
 
@@ -183,7 +183,7 @@ Return Value:
 Parameters:  
 ```number``` range  
 ```number``` damageType
-```Vector3``` from
+```Vector3``` from  
 Return Value:  
 ```gameObject.obj```  target
 
@@ -191,14 +191,14 @@ Return Value:
 
 Parameters:  
 ```number``` range  
-```DamateType``` from
+```DamateType``` from  
 Return Value:  
 ```table```  targets
 
 > ts.getPrio(obj)
 
 Parameters:  
-```gameObject.obj```  obj
+```gameObject.obj```  obj  
 Return Value:  
 ```number```  prio
 
