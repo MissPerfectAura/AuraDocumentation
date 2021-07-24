@@ -127,6 +127,50 @@ print(a:__tostring())
 
 ## game
 
+Properties:  
+
+- ```Vector3``` mousePos
+- ```Vector2``` mousePos2D
+- ```number```  time
+- ```gameObject.obj``` hoveredTarget
+- ```number``` state
+- ```number``` ping
+- ```number``` tick
+- ```boolean``` isDragonBeingAttacked
+- ```boolean``` isNashOrHeraldBeingAttacked
+
+> game.blockOrder()
+
+> game.blockCast()
+
+> game.blockInput(state)
+
+Parameter:  
+```boolean``` state  
+
+> game.buyItem(id)
+
+> game.sendPing(id, position)
+
+> game.setMouse(pos)
+
+> game.getCastPositionGround(points, size, radius)
+
+Parameters:  
+```table``` points  
+```number``` size  
+```number``` radius  
+Return Value:
+```MEC.obj``` mec  
+
+> game.getPositionAfterTime(unit, time)
+
+Parameters:  
+```gameObject.obj``` unit  
+```number``` time  
+Return Value:
+```Vector3``` pos  
+
 ## camera
 
 > camera.zoom
