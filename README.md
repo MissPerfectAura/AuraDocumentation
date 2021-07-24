@@ -155,6 +155,53 @@ Return Value
 
 ## ts
 
+> ts.getTarget(range)
+
+Parameters:  
+```number``` range  
+Return Value:  
+```gameObject.obj```  target  
+
+> ts.getTarget(range, from)
+
+Parameters:  
+```number``` range  
+```Vector3``` from
+Return Value:  
+```gameObject.obj```  target
+
+> ts.getTarget(range, damageType)
+
+Parameters:  
+```number``` range  
+```number``` damageType
+Return Value:  
+```gameObject.obj```  target
+
+> ts.getTarget(range, damageType, from)
+
+Parameters:  
+```number``` range  
+```number``` damageType
+```Vector3``` from
+Return Value:  
+```gameObject.obj```  target
+
+> ts.getAllTargets(range, damageType)
+
+Parameters:  
+```number``` range  
+```DamateType``` from
+Return Value:  
+```table```  targets
+
+> ts.getPrio(obj)
+
+Parameters:  
+```gameObject.obj```  obj
+Return Value:  
+```number```  prio
+
 ## healthPrediction
 
 ## system
@@ -177,7 +224,63 @@ sends message in chat
 
 ## damage
 
+> damage.calcPhysicalDamage(source, target, amount)
+
+Parameters:  
+```gameObject.obj``` source  
+```gameObject.obj``` target  
+```number``` amount  
+Return Value:  
+```number``` damage  
+
+> damage.calcMagicalDamage(source, target, amount)
+
+Parameters:  
+```gameObject.obj``` source  
+```gameObject.obj``` target  
+```number``` amount  
+Return Value:  
+```number``` damage  
+
+> damage.calcAutoAttackDamage(source, target)
+
+Parameters:  
+```gameObject.obj``` source  
+```gameObject.obj``` target  
+Return Value:  
+```number``` damage  
+
 ## orb
+
+Properties:  
+
+- ```number```  orb.mode  
+- ```boolean``` orb.isAttacking
+- ```number``` orb.autoAttackCooldown  
+- ```gameObject.obj``` orb.selectedTarget  
+- ```gameObject.obj``` orb.currentTarget
+- ```boolean``` orb.is_paused
+- ```boolean``` orb.can_attack
+
+> orb.target(obj)
+
+> orb.blockMove(state)
+
+> orb.blockAttack(state)
+
+> orb.attackSpeed(obj)
+
+> orb.baseAttackSpeed(obj)
+
+> orb.force_position(pos)
+
+> orb.reset_force_position()
+
+> orb.resetAuto()
+
+> orb.set_server_pause()
+
+> orb.set_pause()
 
 ## evade
 
@@ -310,6 +413,7 @@ Properties:
 - ```number``` gameObject.actionState
 - ```spellCastInfo.obj``` gameobject.activeSpell
 - ```spellCastInfo.obj``` gameobject.basicAttack
+- ```InterruptibleState``` gameobject.isCastingInterruptibleSpell
 
 **localplayer only function**  
 
@@ -809,6 +913,13 @@ Properties:
 - ```string``` spellDataResource.displayName
 - ```number``` spellDataResource.missileSpeed
 
+## tsData.obj
+
+Properties:  
+
+- ```number``` tsData.prio
+- ```gameObject.obj``` tsData.unit
+
 # **ENUMS**
 
 - SpellSlot
@@ -836,6 +947,11 @@ Properties:
   - Disabled
   - Cooldown
   - NoMana
+
+- InterruptibleState
+  - None
+  - LowPriority
+  - HighPriority
 
 # **GLOBALS**
 
