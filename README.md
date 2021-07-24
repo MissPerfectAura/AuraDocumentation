@@ -250,6 +250,13 @@ Return Value:
 
 ## system
 
+Properties:
+
+- ```string``` directory
+- ```string``` sprites
+
+> system.createFolder(path)
+
 ## chat
 
 > chat.printChat(msg)
@@ -346,6 +353,58 @@ Return Value
 
 Return Value
 ```Response.obj```
+
+## objManager
+
+Properties:  
+
+- ```table``` objManager.heroes
+- ```table``` objManager.turrets
+- ```table``` objManager.aibases
+- ```table``` objManager.minions
+- ```table``` objManager.objList
+
+> objManager.getObjectFromID(id)
+
+**PARAMETERS**  
+```number``` id  
+**RETURN VALUE**  
+```gameObject.obj``` object  
+
+> objManager.getHeroesInRange(range, position, enemy, ally)
+
+**PARAMETERS**  
+```number``` range
+```Vector3``` position  
+```boolean``` enemy    
+```boolean``` ally    
+**RETURN VALUE**  
+```table``` heroes  
+
+> objManager.getEnemyHeroes()
+
+**RETURN VALUE**  
+```table``` enemies  
+
+> objManager.getAllyHeroes()
+
+**RETURN VALUE**  
+```table``` allies  
+
+> objManager.getEnemiesInRange(range)
+
+**PARAMETERS**
+```number``` range  
+**RETURN VALUE**  
+```table``` enemies  
+
+> objManager.getEnemiesInRange(range, from)
+
+**PARAMETERS**
+```number``` range  
+```Vector3``` from  
+**RETURN VALUE**  
+```table``` enemies 
 
 # **OBJECTS**
 
@@ -863,59 +922,7 @@ Properties:
 - ```boolean``` buffInstance.valid
 - ```gameObject.obj``` buffInstance.source
 - ```number``` buffInstance.stacks
-- ```string``` buffInstance.name
-
-## objManager.obj
-
-Properties:  
-
-- ```table``` objManager.heroes
-- ```table``` objManager.turrets
-- ```table``` objManager.aibases
-- ```table``` objManager.minions
-- ```table``` objManager.objList
-
-> objManager.getObjectFromID(id)
-
-**PARAMETERS**  
-```number``` id  
-**RETURN VALUE**  
-```gameObject.obj``` object  
-
-> objManager.getHeroesInRange(range, position, enemy, ally)
-
-**PARAMETERS**  
-```number``` range
-```Vector3``` position  
-```boolean``` enemy    
-```boolean``` ally    
-**RETURN VALUE**  
-```table``` heroes  
-
-> objManager.getEnemyHeroes()
-
-**RETURN VALUE**  
-```table``` enemies  
-
-> objManager.getAllyHeroes()
-
-**RETURN VALUE**  
-```table``` allies  
-
-> objManager.getEnemiesInRange(range)
-
-**PARAMETERS**
-```number``` range  
-**RETURN VALUE**  
-```table``` enemies  
-
-> objManager.getEnemiesInRange(range, from)
-
-**PARAMETERS**
-```number``` range  
-```Vector3``` from  
-**RETURN VALUE**  
-```table``` enemies  
+- ```string``` buffInstance.name 
 
 ## SpellData.obj
 
@@ -963,6 +970,13 @@ Properties:
 
 - ```number``` tsData.prio
 - ```gameObject.obj``` tsData.unit
+
+## mec.obj
+
+Properties:  
+
+- ```Vector3``` mec.point
+- ```number``` mec.hitCount
 
 # **ENUMS**
 
