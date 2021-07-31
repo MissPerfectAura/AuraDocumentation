@@ -909,7 +909,7 @@ Properties:
 - ```Vector3``` missileClient.endPos
 - ```number``` missileClient.targetIndex
 - ```string``` missileClient.missileName
-- ```SpellData.obj``` missileClient.sourceIndex
+- ```SpellData.obj``` missileClient.spellData
 - ```number``` missileClient.missileSpeed
 
 ## buffScript.obj
